@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. 카테고리·태그 · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>5. 카테고리·태그</h1>
+<h2>카테고리 관리</h2>
+<p>카테고리는 <strong>관리</strong> 메뉴(iPhone은 상단 메뉴 버튼을 눌러 여는 드로어, iPad·Mac은 설정의 "카테고리 및 자동화" 섹션)의 <strong>카테고리</strong> 행에서 관리한다. 화면 제목은 <strong>카테고리 관리</strong>다.</p>
+<ul><li>카테고리는 대분류(지출/수입 각각의 큰 갈래)와 그 아래 소분류 2단계 구조다.</li><li>새로 만들 때는 <strong>이름만</strong> 입력한다(아이콘·색상 선택 없음). 만든 뒤 그 카테고리를 다시 열어 <strong>편집</strong> 화면으로 들어가야 <strong>아이콘 선택</strong> 그리드가 나타나고, 원하는 SF Symbol을 골라 바꿀 수 있다. 색상은 사용자가 고를 수 없고 항상 자동으로 배정된다. 소분류가 하나도 없는 대분류는 거래에 직접 쓸 수 없다.</li><li>상단 바의 <strong>순서 편집</strong> 버튼을 누르면 대분류 순서와, 각 대분류 안의 소분류 순서를 각각 드래그로 바꿀 수 있다.</li></ul>
+<figure><img src="../assets/12-categories-reorder-mode.png" alt="카테고리 관리 화면과 순서 편집 모드" loading="lazy"><figcaption>카테고리 관리 화면과 순서 편집 모드</figcaption></figure>
+<figure><img src="../assets/13-categories-icon-picker.png" alt="카테고리 편집 화면의 아이콘 선택 그리드" loading="lazy"><figcaption>카테고리 편집 화면의 "아이콘 선택" 그리드</figcaption></figure>
+<p>카테고리를 더는 쓰지 않게 되면 삭제 대신 <strong>보관</strong>하는 것이 기본이다. 과거 거래에 이미 쓰인 카테고리는 그 거래 기록을 지우지 않기 위해 완전히 삭제되지 않는다(자세한 예외는 14장 위험 작업 참고).</p>
+<h2>예산 묶음·태그 관리</h2>
+<p>같은 <strong>관리</strong> 메뉴의 <strong>예산 묶음 · 태그</strong> 행에서 예산 묶음과 태그를 함께 관리한다.</p>
+<ul><li>예산 묶음은 여러 카테고리를 하나의 지출 한도로 묶는 단위다(2장, 6장 참고). 이 화면에서 묶음을 만들고, 어떤 카테고리를 그 묶음에 연결할지 정한다.</li><li>태그는 카테고리와 별개로 거래 하나하나에 자유롭게 붙이는 라벨이다(예: <code>#여행</code>, <code>#환불예정</code>). 같은 태그로 여러 카테고리·계정에 걸친 거래를 가로질러 모아볼 수 있다.</li><li>이 화면에서도 <strong>순서 편집</strong> ↔ <strong>완료</strong> 버튼으로 묶음·태그의 표시 순서를 바꿀 수 있다.</li></ul>
+<figure><img src="../assets/14-categories-budget-tag-management.png" alt="예산 묶음 · 태그 관리 화면" loading="lazy"><figcaption>예산 묶음 · 태그 관리 화면</figcaption></figure>
+<h2>카테고리와 예산 묶음은 독립적이다</h2>
+<p>카테고리를 새로 만드는 것과 그 카테고리를 예산 묶음에 연결하는 것은 <strong>서로 다른 결정</strong>이다. 카테고리만 만들고 예산 묶음에 연결하지 않으면, 그 카테고리의 지출은 특정 묶음의 사용액이 아니라 전체 배정 가능(풀)을 줄인다. 자세한 계산은 6장에서 다룬다.</p>
+<nav class="chapter-pager"><span class="prev"><a href="04-transactions.html">← 4. 거래 입력 — 지출·수입·이체·카드대금·환불·분할</a></span><span class="next"><a href="06-budget-walkthrough.html">6. 예산 실전 예제 →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

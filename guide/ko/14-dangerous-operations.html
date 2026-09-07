@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14. 위험 작업 — 앱 삭제, 데이터 초기화, 계정/거래 물리 삭제 전에 해야 할 일 · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>14. 위험 작업 — 앱 삭제, 데이터 초기화, 계정/거래 물리 삭제 전에 해야 할 일</h1>
+<p>타미오는 대부분의 "지우기"를 삭제가 아니라 <strong>종료·보관</strong>으로 처리한다(3장, 5장). 하지만 아래 세 가지는 실행하면 <strong>되돌릴 수 없는 진짜 삭제</strong>다. 실행하기 전에 반드시 12장의 백업을 먼저 만들어 둔다.</p>
+<h2>거래를 완전히 삭제하기</h2>
+<p>거래 상세에서 삭제를 선택하면 <strong>"거래를 삭제할까요?"</strong> 확인이 뜬다.</p>
+<ul><li>이 거래는 완전히 사라지고, 관련된 잔액·통계가 즉시 다시 계산된다.</li><li>저장하지 않은 변경 중이었다면 그 변경도 함께 사라진다.</li><li>어느 경우든 확인 문구에 <strong>"되돌릴 수 없습니다"</strong>라고 명시된다.</li></ul>
+<h2>계정(자산)을 삭제하기</h2>
+<p>계정 삭제는 그 계정에 거래가 있는지에 따라 다르게 동작한다.</p>
+<ul><li><strong>거래가 없는 계정</strong>: "거래가 없는 계정을 완전히 삭제합니다. 이 작업은 취소할 수 없습니다"라는 확인 뒤 바로 삭제된다.</li><li><strong>거래가 있는 계정</strong>: 두 가지 중 하나를 고른다.<ol><li><strong>자산만 목록에서 삭제 · 거래는 유지</strong> — 계정은 없어지지만 과거 거래 기록은 남는다.</li><li><strong>자산과 거래를 함께 영구 삭제</strong> — 계정과 그 계정에 딸린 거래·태그·영수증까지 전부 원자적으로 사라진다.</li></ol></li></ul>
+<p>두 번째 선택지는 이 앱에서 가장 파괴적인 작업이다. 실행 전 반드시 그 계정의 거래가 정말 필요 없는지 확인한다.</p>
+<figure><img src="../assets/44-dangerous-delete-account.png" alt="거래가 있는 계정의 삭제 확인" loading="lazy"><figcaption>거래가 있는 계정의 삭제 확인 — 두 선택지</figcaption></figure>
+<h2>데이터 전체 초기화</h2>
+<p>설정의 <strong>데이터 초기화</strong>는 <strong>모든 장부 데이터를 최초 설치 상태로 되돌린다.</strong> 화면 상단에 <strong>"되돌릴 수 없는 위험 구역"</strong> 경고가 뜨고, 실제로 실행하려면 확인 칸에 정확히 <strong>"초기화"</strong> 라는 글자를 그대로 입력해야 한다(대소문자·공백을 봐주지 않는다). 그런 다음에만 <strong>모든 장부 데이터 초기화</strong> 버튼이 눌린다.</p>
+<figure><img src="../assets/45-dangerous-data-reset.png" alt="데이터 초기화 화면 — 확인 문구 입력란" loading="lazy"><figcaption>"데이터 초기화" 화면 — 확인 문구 입력란</figcaption></figure>
+<p>이 작업은 계정·거래·예산·반복 규칙·문자 인식 규칙·영수증을 포함한 <strong>모든 것</strong>을 지운다. 실행 전에 12장의 백업을 반드시 먼저 만든다.</p>
+<h2>앱을 완전히 지우기 전에</h2>
+<p>앱을 기기에서 삭제(언인스톨)하면 iCloud나 서버에 별도 사본이 없으므로 데이터가 함께 사라질 수 있다. 앱을 지우기 전에는 항상 백업 파일을 안전한 곳(iCloud Drive, 다른 기기 등)에 따로 보관해 둔다. <strong>앱 안에는 이런 사전 안내 문구가 없다</strong> — iCloud Drive가 언급되는 유일한 곳은 백업 저장 자체가 실패했을 때 뜨는 재시도 안내뿐이므로, 이 조언은 이 매뉴얼에서만 제공하는 것이며 앱 화면 문구를 그대로 인용한 것이 아니다.</p>
+<nav class="chapter-pager"><span class="prev"><a href="13-app-lock-privacy.html">← 13. 앱 잠금, 로컬 저장, 개인정보 처리</a></span><span class="next"><a href="15-troubleshooting-support.html">15. 문제 해결과 문의 →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. 계정 만들기와 시작 잔액 · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>3. 계정 만들기와 시작 잔액</h1>
+<p>계정은 돈이 실제로 있거나 빚이 잡히는 위치다(2장 참고). 이 장에서는 <strong>새 계정</strong>을 만들고 <strong>시작 잔액</strong>을 맞추는 방법을 다룬다.</p>
+<h2>다섯 가지 계정 유형</h2>
+<p>새 계정을 추가할 때 다음 다섯 유형 중 하나를 고른다.</p>
+<div class="table-wrap"><table><thead><tr><th>유형</th><th>예시</th><th>잔액의 의미</th></tr></thead><tbody><tr><td>은행</td><td>입출금 통장, 급여 계좌</td><td>실제 보유 현금</td></tr><tr><td>예적금</td><td>정기예금, 적금</td><td>만기까지 묶인 저축 자산</td></tr><tr><td>투자</td><td>증권 계좌</td><td>평가액이 아닌 실제 입출금 기준 자산</td></tr><tr><td>현금</td><td>지갑, 비상금</td><td>실제 보유 현금</td></tr><tr><td>신용카드</td><td>신용카드</td><td>결제한 만큼 쌓이는 <strong>부채</strong>(빚) — 자산이 아니다</td></tr></tbody></table></div>
+<p>신용카드는 다른 넷과 성격이 다르다. 카드를 쓸수록 "이 카드로 갚아야 할 금액"이 <strong>늘어나며</strong>, 결제일에 대금을 갚으면 그 부채가 줄어든다.</p>
+<p>화면 제목은 <strong>새 자산</strong>이고, 이름을 넣는 <strong>자산 이름</strong> 필드가 공통으로 있다.</p>
+<figure><img src="../assets/04-accounts-new-five-types.png" alt="새 자산 화면의 다섯 계정 유형 선택과 이름 필드" loading="lazy"><figcaption>새 자산 화면 — 다섯 유형 선택과 자산 이름 필드</figcaption></figure>
+<h2>시작 잔액을 맞춘다</h2>
+<p>새 계정을 만들 때 지금 그 계좌·카드의 실제 잔액을 입력해두면, 그 시점 잔액을 만들기 위한 거래 하나가 자동으로 생긴다. 입력 필드 이름은 유형에 따라 다르다.</p>
+<ul><li>은행·예적금·투자·현금: <strong>장부 시작 잔액</strong>. 화면에는 "별도의 기초잔액 기록이 생성됩니다. 수입이나 지출로 집계되지 않습니다"라는 안내가 함께 뜬다.</li><li>신용카드: <strong>현재 사용액</strong> — 지금까지 갚지 않고 남아 있는 카드 대금을 입력한다.</li></ul>
+<p>이 값은 그대로 저장되는 숫자가 아니라 시작 시점을 맞추기 위한 거래를 만드는 것이다. 이후 실제 거래가 쌓이면 화면에 표시되는 <strong>현재 잔액</strong>은 그 거래들로부터 항상 다시 계산된다.</p>
+<h2>나중에 잔액이 실제와 안 맞으면</h2>
+<p>은행 앱과 타미오의 잔액이 조금씩 어긋나는 경우(누락된 거래, 반올림 등) 별도 화면을 열 필요 없이 <strong>계정 상세 화면 맨 위에 보이는 "현재 잔액" 숫자를 직접 눌러</strong> 실제 값으로 고친다. 값을 바꾸면 <strong>차액 거래 계속</strong> 버튼이 나타나고, 그걸 눌러야 <strong>차액만큼의 보정 거래</strong>가 하나 생겨 잔액을 실제와 같게 만든다. 차액이 0이면 아무 거래도 만들어지지 않는다.</p>
+<figure><img src="../assets/06-accounts-actual-balance-edit.png" alt="계정 상세 화면의 현재 잔액 인라인 편집과 차액 거래 계속 버튼" loading="lazy"><figcaption>계정 상세 화면의 "현재 잔액" 인라인 편집과 "차액 거래 계속" 버튼</figcaption></figure>
+<h2>계정을 정리할 때</h2>
+<p>일반 계좌·카드·현금·투자 계정에는 "종료"나 "보관" 메뉴가 없다 — 계정 상세의 관리 메뉴(⋯)에는 이름 변경과 삭제만 있다. 더는 쓰지 않는 계정은 그대로 목록에 남겨 둬도 문제가 없고, 정말 지우고 싶다면 14장에서 다루는 삭제(거래 유무에 따라 동작이 다르다)를 사용한다. <strong>예적금 계정만 예외로</strong>, 만기나 중도 해지 시 원금·이자를 입금 처리한 뒤 <strong>종료</strong>하는 별도 흐름을 계정 상세에서 제공한다.</p>
+<nav class="chapter-pager"><span class="prev"><a href="02-three-axes.html">← 2. 먼저 알아둘 세 축 — 계정, 카테고리, 예산</a></span><span class="next"><a href="04-transactions.html">4. 거래 입력 — 지출·수입·이체·카드대금·환불·분할 →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

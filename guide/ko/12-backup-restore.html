@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12. 백업·복원·새 장부 시작·기기 간 전송 · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>12. 백업·복원·새 장부 시작·기기 간 전송</h1>
+<h2>백업 만들기</h2>
+<p>설정의 <strong>장부 백업 및 복구</strong> 화면에서 <strong>장부 백업 만들기</strong>를 누르면 지금까지의 모든 데이터를 하나의 백업 파일로 내보낸다. 이미 백업이 있다면 <strong>다시 백업 만들기</strong>로 최신 상태의 새 백업을 만든다. 백업 파일에는 거래·계정·예산·반복 규칙·문자 인식 규칙과, 사용자가 선택했다면 영수증 첨부까지 포함될 수 있다.</p>
+<figure><img src="../assets/38-backup-create.png" alt="장부 백업 및 복구 화면 — 장부 백업 만들기" loading="lazy"><figcaption>"장부 백업 및 복구" 화면 — "장부 백업 만들기"</figcaption></figure>
+<h2>백업에서 복원하기</h2>
+<p>같은 화면의 <strong>백업에서 장부 복구</strong>를 눌러 백업 파일을 고르고 <strong>복구</strong>를 실행한다. 복원은 현재 장부를 백업 시점 상태로 <strong>되돌리는</strong> 작업이므로, 복원을 실행하기 전에 현재 상태의 안전 백업이 자동으로 하나 더 만들어진다 — 복원 결과가 마음에 들지 않으면 그 안전 백업으로 다시 되돌릴 수 있다.</p>
+<figure><img src="../assets/39-backup-restore-confirm.png" alt="백업 파일 선택과 복구 확인 화면" loading="lazy"><figcaption>백업 파일 선택과 복구 확인 화면</figcaption></figure>
+<h2>기기 간 전송</h2>
+<p>새 기기로 옮기거나 두 기기의 장부를 맞출 때는 <strong>기기로 보내기</strong>를 사용한다. 전송은 암호화된 채널로 이뤄지며, 전송이 중간에 멈추거나 실패해도 <strong>이 기기의 데이터는 그대로 유지</strong>된다. 전송이 끝날 때까지 화면을 열어 둬야 한다.</p>
+<figure><img src="../assets/40-backup-device-transfer.png" alt="기기로 보내기 화면" loading="lazy"><figcaption>"기기로 보내기" 화면</figcaption></figure>
+<h2>새 장부 시작</h2>
+<p>이 항목은 설정 화면 안에서 평소에 누를 수 있는 버튼이 아니다. <strong>장부를 정상적으로 열지 못했을 때만</strong> 나타나는 별도의 "복구 필요" 화면에서 "다시 시도"와 나란히 있는 두 번째 버튼이다. 여기서 "새 장부 시작"을 누르면 기존 장부는 그 자리에서 사라지는 것이 아니라 복구용 보관본으로 남고, 진행 전 확인 문구를 입력해야 하는 별도 확인 화면이 한 번 더 뜬다.</p>
+<figure><img src="../assets/41-backup-recovery-required.png" alt="복구 필요 화면의 다시 시도/새 장부 시작 버튼" loading="lazy"><figcaption>"복구 필요" 화면의 "다시 시도"/"새 장부 시작" 버튼과 뒤이은 확인 화면</figcaption></figure>
+<p>고장이 나서가 아니라 <strong>일부러</strong> 빈 장부로 다시 시작하고 싶다면, 위 경로를 기다릴 필요 없이 14장 위험 작업에서 설명하는 <strong>데이터 초기화</strong>(설정에서 바로 접근)를 사용한다 — 두 경로는 도달 화면도 도달 조건도 다르며, 어느 쪽이든 실행 전 반드시 필요한 백업을 먼저 만들어 둔다.</p>
+<nav class="chapter-pager"><span class="prev"><a href="11-currency-fx.html">← 11. 외화와 환율</a></span><span class="next"><a href="13-app-lock-privacy.html">13. 앱 잠금, 로컬 저장, 개인정보 처리 →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

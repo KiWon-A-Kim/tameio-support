@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. 예산 실전 예제 · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>6. 예산 실전 예제</h1>
+<p>이 장은 처음부터 끝까지 하나의 가상 예제를 따라간다. 숫자는 전부 암산 가능한 만 원 단위이며, 실제 사용자 데이터가 아니다. 예제를 따라 하면서 "왜 예산은 계좌 잔액과 다르게 움직이는가"에 스스로 답할 수 있는 것이 목표다.</p>
+<h2>예제 설정</h2>
+<ul><li>예산 기간: 매월 1일 시작 (달력월 기준).</li><li>급여: 매월 23일에 은행 계좌로 3,000,000원 입금.</li><li>예산 묶음 세 개, 이월 스위치 설정이 서로 다르다(스위치의 정확한 동작은 3단계에서 설명한다).</li></ul>
+<div class="table-wrap"><table><thead><tr><th>예산 묶음</th><th>이월 스위치 설정</th><th>8월 배정</th><th>8월 실제 사용</th><th>8월 말 남은 금액</th></tr></thead><tbody><tr><td>생활비</td><td>둘 다 끔 (풀로 반환)</td><td>800,000원</td><td>650,000원</td><td>+150,000원</td></tr><tr><td>여행비 준비금</td><td>남은 금액 이월 켬</td><td>200,000원</td><td>0원</td><td>+200,000원</td></tr><tr><td>카페/간식</td><td>초과 사용액 이월 켬</td><td>100,000원</td><td>130,000원</td><td>-30,000원</td></tr></tbody></table></div>
+<p>8월 1일 시점 배정 가능(풀)이 1,100,000원이었고, 세 묶음에 정확히 800,000 + 200,000 + 100,000 = 1,100,000원을 배정해 풀은 0원이 됐다고 하자.</p>
+<h2>1단계 — 8월 한 달 동안 지출을 입력한다</h2>
+<p>각 지출을 해당 카테고리로 입력하면 그 카테고리가 속한 예산 묶음의 <strong>사용액</strong>이 늘어난다.</p>
+<ul><li>생활비 묶음: 식비·교통비 등으로 650,000원 지출 → 사용액 650,000원, 남은 금액 800,000 − 650,000 = <strong>150,000원</strong>.</li><li>여행비 준비금: 이번 달은 지출 없음 → 남은 금액 그대로 <strong>200,000원</strong>.</li><li>카페/간식: 예상보다 많이 써서 130,000원 지출 → 남은 금액 100,000 − 130,000 = <strong>−30,000원</strong> (초과 사용).</li></ul>
+<figure><img src="../assets/15-budget-after-spending.png" alt="예산 화면, 세 묶음의 배정/사용액/남은 금액 카드" loading="lazy"><figcaption>예산 화면, 8월 말 세 묶음의 배정/사용액/남은 금액 카드</figcaption></figure>
+<p>이 시점에서 남은 금액이 음수인 카페/간식은 오류가 아니라 <strong>이번 달 예상보다 많이 썼다는 신호</strong>다. 계좌 잔액이 마이너스가 됐다는 뜻이 아니라, 그 카테고리에 정한 한도를 넘겼다는 뜻이다.</p>
+<h2>2단계 — 8월 23일 급여를 실제 수입으로 기록한다</h2>
+<p>급여 3,000,000원을 은행 계좌 수입 거래로 입력한다. 이 순간 <strong>배정 가능(풀)</strong>이 3,000,000원 늘어난다. 8월 예산 기간은 이미 배정을 끝냈으므로 이 돈은 <strong>9월 예산을 위한 재원</strong>이 된다.</p>
+<blockquote><p>급여를 미리 배정하는 기능은 없다. 급여가 실제 거래로 기록된 뒤에만 그 금액을 배정할 수 있다. "이번 달 안에 받을 예정"이라는 이유만으로는 배정 가능액이 늘지 않는다.</p></blockquote>
+<h2>3단계 — 8월 말, 기간을 마감하고 9월로 넘어간다</h2>
+<p>각 예산 묶음에는 남은 금액의 <strong>부호마다 따로</strong> 켜고 끌 수 있는 이월 스위치 두 개가 있다 — <strong>남은 금액 이월</strong>(양수일 때)과 <strong>초과 사용액 이월</strong>(음수일 때). 스위치를 켜면 그 부호의 금액을 <strong>같은 묶음</strong>에 남기고, 끄면 <strong>배정 가능(풀)</strong> 쪽으로 옮긴다. 이 예제의 세 묶음은 다음처럼 설정돼 있다.</p>
+<div class="table-wrap"><table><thead><tr><th>예산 묶음</th><th>남은 금액 이월</th><th>초과 사용액 이월</th><th>8월 말 상태</th><th>9월 시작 시 묶음 잔액</th><th>풀에 생기는 변화</th></tr></thead><tbody><tr><td>생활비</td><td>끔</td><td>끔</td><td>+150,000원 (양수)</td><td>0원 (리셋)</td><td>+150,000원 반환</td></tr><tr><td>여행비 준비금</td><td>켬</td><td>—</td><td>+200,000원 (양수)</td><td>+200,000원 (유지)</td><td>변화 없음</td></tr><tr><td>카페/간식</td><td>—</td><td>켬</td><td>−30,000원 (음수)</td><td>−30,000원 (유지)</td><td>변화 없음</td></tr></tbody></table></div>
+<figure><img src="../assets/16-budget-rollover-toggles.png" alt="예산 기간·이월 설정 화면의 세 묶음별 남은 금액 이월/초과 사용액 이월 스위치" loading="lazy"><figcaption>예산 기간·이월 설정 화면 — 묶음마다 "남은 금액 이월"/"초과 사용액 이월"을 독립적으로 켜고 끈다</figcaption></figure>
+<p>두 스위치 조합 모두 <strong>돈이 생기거나 사라지지 않는다.</strong> 같은 금액이 "묶음 안"에 남을지, "풀로 돌아갈지"만 달라진다. 이 예제에서 9월 1일 풀은 다음과 같이 계산된다.</p>
+<pre><code>9월 1일 풀 = 8월 말 풀(0원) + 8월 급여(3,000,000원) + 생활비 반환분(150,000원)
+           = 3,150,000원</code></pre>
+<h2>4단계 — 9월 배정을 정한다</h2>
+<p><strong>예산 배정</strong> 화면에서 각 묶음에 이번 기간 쓰고 싶은 총액(목표)을 입력하면, 화면이 이미 이월된 금액을 고려해 <strong>실제로 저장할 신규 배정</strong>을 자동 계산해준다. 카페/간식처럼 이월이 음수인 묶음에서 이 차이가 분명히 드러난다.</p>
+<div class="table-wrap"><table><thead><tr><th>예산 묶음</th><th>9월 이월</th><th>9월에 쓰고 싶은 목표</th><th>자동 계산된 신규 배정</th><th>풀 변화</th></tr></thead><tbody><tr><td>생활비</td><td>0원</td><td>800,000원</td><td>800,000원</td><td>−800,000원</td></tr><tr><td>여행비 준비금</td><td>200,000원</td><td>300,000원</td><td>100,000원</td><td>−100,000원</td></tr><tr><td>카페/간식</td><td>−30,000원</td><td>100,000원</td><td><strong>130,000원</strong></td><td>−130,000원</td></tr></tbody></table></div>
+<p>카페/간식은 "9월에도 10만 원짜리 예산으로 쓰고 싶다"는 목표(100,000원)를 그대로 입력해도, 지난달 초과분 30,000원을 먼저 메워야 하므로 화면이 자동으로 신규 배정 130,000원을 계산해 저장한다. 사용자가 130,000원을 직접 암산해 입력할 필요는 없다.</p>
+<pre><code>9월 1일 풀 = 3,150,000 − 800,000 − 100,000 − 130,000 = 2,120,000원</code></pre>
+<figure><img src="../assets/17-budget-allocation-carryover.png" alt="예산 배정 화면의 카페/간식 묶음 이월과 목표 배정 입력" loading="lazy"></figure>
+<p><em>예산 배정 화면 — 카페/간식 묶음의 이월 −30,000원과 목표 100,000원, 자동 계산된 신규 배정 130,000원</em></p>
+<h2>검산</h2>
+<p>두 시점 모두에서 다음 항등식이 성립해야 한다.</p>
+<pre><code>전체 예산가치 = 배정 가능 풀 + 모든 예산 묶음의 남은 금액</code></pre>
+<ul><li>8월 말(마감 전): 풀 3,000,000 + (150,000 + 200,000 − 30,000) = 3,320,000원.</li><li>9월 1일(마감·재배정 후): 풀 2,120,000 + (800,000 + 300,000 + 100,000) = 3,320,000원.</li></ul>
+<p>숫자가 정확히 같다. 마감과 재배정을 거치며 <strong>돈이 늘거나 준 것이 아니라 위치만 이동</strong>했다는 뜻이다.</p>
+<h2>자주 하는 오해 정리</h2>
+<ul><li><strong>"이번 달 급여 예정이 있으니 지금 배정할 수 있다"</strong> — 아니다. 배정은 실제로 기록된 수입에서만 가능하다.</li><li><strong>"풀이 음수면 뭔가 잘못됐다"</strong> — 항상 오류는 아니다. 예산 기간(달력월)과 급여 주기(23일)가 다르면 월초에 일시적으로 풀이 부족해 보일 수 있다. 이런 경우 한 달 앞서 예산을 편성하면 해결된다 (예: 8월 23일 급여를 9월 예산에 배정).</li><li><strong>"카테고리별로 예산을 따로 저장한다"</strong> — 아니다. 카테고리는 분류일 뿐이고, 여러 카테고리를 묶은 것이 예산 묶음이다. 카테고리를 새로 만들어도 예산 묶음에 연결하지 않으면 그 지출은 특정 묶음이 아니라 풀 전체를 줄인다.</li></ul>
+<blockquote><p><strong>예산 배정</strong> 화면은 각 예산 묶음 이름이 섹션 제목이고, 그 아래 −/+ 버튼과 슬라이더가 딸린 숫자 입력칸(별도 라벨 없이 금액만 입력)이 목표 배정액 필드다. 아래에서 설명하는 "그룹 간 이동"은 이 화면과 별개의 독립된 화면이다.</p></blockquote>
+<h2>참고 — 배정을 다른 묶음으로 옮기기</h2>
+<p>한 묶음에 너무 많이 배정했다면 풀을 거치지 않고 <strong>그룹 간 이동</strong> 화면에서 두 묶음 사이의 금액을 바로 옮길 수 있다. 이동 전후 두 묶음 금액의 합은 그대로 유지된다(합계 0 이동).</p>
+<figure><img src="../assets/18-budget-move-between-groups.png" alt="그룹 간 이동 화면 — 보낼 그룹·받을 그룹과 이동 금액" loading="lazy"><figcaption>그룹 간 이동 화면</figcaption></figure>
+<nav class="chapter-pager"><span class="prev"><a href="05-categories-tags.html">← 5. 카테고리·태그</a></span><span class="next"><a href="07-recurring-walkthrough.html">7. 반복 규칙·예정 거래 실전 예제 →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

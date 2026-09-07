@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10. 통계·보고서 읽기와 내보내기 · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>10. 통계·보고서 읽기와 내보내기</h1>
+<h2>통계 탭</h2>
+<p><strong>통계</strong> 탭은 <strong>지출 · 수입 · 순자산</strong> 세 관점을 상단 세그먼트로 전환하며 본다. 우측 상단 (또는 상단 바)에서 <strong>통계 기간 선택</strong>을 열어 볼 기간(주·월·연 등)을 바꿀 수 있다.</p>
+<ul><li>지출/수입 관점은 분류별 비중과 전월 대비 증감을 보여준다.</li><li>순자산 관점은 자산에서 부채(신용카드 미지급금 등)를 뺀 값의 추이를 보여준다.</li></ul>
+<figure><img src="../assets/33-stats-segment.png" alt="통계 탭 — 지출/수입/순자산 세그먼트" loading="lazy"><figcaption>통계 탭 — 지출/수입/순자산 세그먼트</figcaption></figure>
+<h2>보고서 화면</h2>
+<p><strong>보고서</strong> 화면에는 네 가지 재무 보고서가 있다.</p>
+<div class="table-wrap"><table><thead><tr><th>보고서</th><th>보여주는 것</th></tr></thead><tbody><tr><td><strong>기간 결산</strong></td><td>한 예산 기간이 끝난 뒤의 배정·사용·이월 결과</td></tr><tr><td><strong>분류 상세</strong></td><td>카테고리별 지출·수입 상세 내역</td></tr><tr><td><strong>예산 실적</strong></td><td>예산 묶음별 배정 대비 실제 사용 실적</td></tr><tr><td><strong>계정 보고서</strong></td><td>계정별 잔액·거래 흐름</td></tr></tbody></table></div>
+<p>더 깊이 들여다보고 싶다면 <strong>고급 감사</strong> 섹션의 <strong>회계 기록</strong>에서 실제 분개(원장) 내역을 거래 단위로 확인할 수 있다. 평소에는 볼 필요가 없는 화면이지만, 숫자가 어떻게 계산됐는지 끝까지 추적하고 싶을 때 유용하다.</p>
+<figure><img src="../assets/34-reports-list.png" alt="보고서 화면 — 네 가지 재무 보고서 목록" loading="lazy"><figcaption>보고서 화면 — 네 가지 재무 보고서 목록</figcaption></figure>
+<h3>기간 이동과 세부 필터</h3>
+<p>네 보고서 화면 모두 상단에 같은 구조의 기간 이동 막대가 있다 — 좌우 화살표로 이전/다음 기간으로 옮기고, <strong>월 · 분기 · 연간</strong> 탭으로 단위를 바꾸며, 여러 통화를 쓴다면 통화 선택 메뉴도 같은 줄에 있다.</p>
+<p>더 좁혀 보고 싶으면 화면 우측 상단의 필터 아이콘을 눌러 시트를 연다. 이 시트에서 고를 수 있는 것은 <strong>거래 종류</strong>(지출/수입/이체 등), <strong>계정</strong>(자산·부채·수입·지출 계정 중 여러 개 동시 선택), <strong>태그</strong>(태그를 하나도 안 썼다면 이 항목 자체가 안 보인다), <strong>가맹점</strong>(정확히 일치하는 이름으로 검색)이다. <strong>카테고리 단위로 좁히는 필터는 없다</strong> — 카테고리별로 보고 싶다면 "분류 상세" 보고서 자체가 그 역할을 한다.</p>
+<h2>PDF·CSV로 내보내기</h2>
+<p>보고서 화면 상단의 <strong>내보내기</strong> 버튼을 누르면 <strong>PDF로 내보내기</strong> 또는 <strong>CSV로 내보내기</strong>를 고를 수 있다. PDF는 사람이 읽기 좋은 요약본, CSV는 표 계산 프로그램에서 다시 분석하고 싶을 때 적합하다.</p>
+<figure><img src="../assets/35-reports-export-menu.png" alt="내보내기 메뉴 — PDF/CSV 선택" loading="lazy"><figcaption>"내보내기" 메뉴 — PDF/CSV 선택</figcaption></figure>
+<nav class="chapter-pager"><span class="prev"><a href="09-receipts-ocr.html">← 9. 영수증 촬영·OCR·첨부</a></span><span class="next"><a href="11-currency-fx.html">11. 외화와 환율 →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>
