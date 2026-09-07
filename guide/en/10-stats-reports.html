@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10. Reading and Exporting Statistics and Reports · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>10. Reading and Exporting Statistics and Reports</h1>
+<h2>The Statistics tab</h2>
+<p>The <strong>Statistics</strong> tab switches between three perspectives — <strong>spending · income · net worth</strong> — using the segmented control at the top. Open <strong>Select Statistics Period</strong> from the top right (or the top bar) to change the period you are looking at (week, month, year, and so on).</p>
+<ul><li>The spending and income perspectives show the share taken by each classification and the change against the previous month.</li><li>The net worth perspective shows the trend of assets minus liabilities (credit card balances owed and so on).</li></ul>
+<figure><img src="../assets/en-33-stats-segment.png" alt="The Statistics tab — spending/income/net worth segments" loading="lazy"><figcaption>Statistics tab — spending/income/net worth segments</figcaption></figure>
+<h2>The Reports screen</h2>
+<p>The <strong>Reports</strong> screen holds four financial reports.</p>
+<div class="table-wrap"><table><thead><tr><th>Report</th><th>What it shows</th></tr></thead><tbody><tr><td><strong>Period Closing</strong></td><td>The allocation, spending, and carryover results after a budget period ends</td></tr><tr><td><strong>Classification Detail</strong></td><td>Detailed spending and income by category</td></tr><tr><td><strong>Budget Performance</strong></td><td>Actual spending against the allocation, per budget group</td></tr><tr><td><strong>Account Report</strong></td><td>Balances and transaction flow, per account</td></tr></tbody></table></div>
+<p>If you want to look deeper, <strong>Accounting Records</strong> in the <strong>Advanced Audit</strong> section shows the actual double-entry postings transaction by transaction. You do not need this screen day to day, but it is useful when you want to trace exactly how a figure was calculated.</p>
+<h3>Moving between periods, and detailed filters</h3>
+<p>All four report screens have the same period bar at the top — arrows move to the previous or next period, the <strong>month · quarter · year</strong> tabs change the unit, and if you use several currencies the currency menu sits on the same row.</p>
+<p>To narrow things further, tap the filter icon in the top right to open a sheet. What you can choose there is <strong>transaction kind</strong> (expense, income, transfer, and so on), <strong>account</strong> (several asset, liability, income, or expense accounts at once), <strong>tag</strong> (if you have never used a tag, this item is not shown at all), and <strong>merchant</strong> (searched by exact name). <strong>There is no filter that narrows by category</strong> — if you want a per-category view, the "Classification Detail" report is itself that view.</p>
+<h2>Exporting to PDF or CSV</h2>
+<p>Tap <strong>Export</strong> at the top of a report screen and choose <strong>Export as PDF</strong> or <strong>Export as CSV</strong>. PDF suits a summary meant to be read by a person; CSV suits reanalysis in a spreadsheet program.</p>
+<nav class="chapter-pager"><span class="prev"><a href="09-receipts-ocr.html">← 9. Receipts — Capture, OCR, and Attachments</a></span><span class="next"><a href="11-currency-fx.html">11. Foreign Currency and Exchange Rates →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

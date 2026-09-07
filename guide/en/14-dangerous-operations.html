@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14. Destructive Operations — What to Do Before Deleting the App, Resetting Data, or Permanently Deleting Accounts and Transactions · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>14. Destructive Operations — What to Do Before Deleting the App, Resetting Data, or Permanently Deleting Accounts and Transactions</h1>
+<p>Tameio handles most "removals" as <strong>closing or archiving</strong> rather than deletion (chapters 3 and 5). The three operations below, however, are <strong>real deletion that cannot be undone</strong>. Always make the backup from chapter 12 first.</p>
+<h2>Deleting a transaction permanently</h2>
+<p>Choosing delete on a transaction detail brings up the confirmation <strong>"Delete this transaction?"</strong></p>
+<ul><li>The transaction disappears completely, and the balances and statistics involved are recalculated immediately.</li><li>If you were in the middle of unsaved changes, those are lost as well — the wording is "Unsaved changes will also be lost, and this transaction will be permanently deleted. This cannot be undone."</li><li>In every case the confirmation states explicitly that the action <strong>cannot be undone</strong>.</li></ul>
+<h2>Deleting an account (asset)</h2>
+<p>Deleting an account behaves differently depending on whether it has transactions.</p>
+<ul><li><strong>An account with no transactions</strong>: after the confirmation "Permanently deletes this account with no transactions. This cannot be undone.", it is deleted straight away.</li><li><strong>An account with transactions</strong>: you choose one of two options.<ol><li><strong>Remove asset from list · Keep N transactions</strong> — the account goes away but the past transaction records stay.</li><li><strong>Permanently delete asset and N transactions</strong> — the account and every transaction, tag, and receipt attached to it are removed atomically.</li></ol></li></ul>
+<p>The second option is the most destructive operation in this app. Make sure you really do not need that account's transactions before running it.</p>
+<h2>Resetting all data</h2>
+<p><strong>Reset Data</strong> in Settings <strong>returns all ledger data to its freshly installed state.</strong> An <strong>"Irreversible Danger Zone"</strong> warning appears at the top of the screen, and to actually run it you must type the exact confirmation word into the confirmation field — in English that word is <strong><code>RESET</code></strong> (it is not forgiving about case or spaces). Only then does the <strong>Reset All Ledger Data</strong> button become available.</p>
+<p>This operation erases <strong>everything</strong>, including accounts, transactions, budgets, recurring rules, message recognition rules, and receipts. Always make the backup from chapter 12 first.</p>
+<h2>Before deleting the app entirely</h2>
+<p>If you delete (uninstall) the app from your device, there is no separate copy on iCloud or any server, so your data can disappear with it. Before removing the app, always keep a backup file somewhere safe (iCloud Drive, another device, and so on). <strong>The app itself contains no such advance warning</strong> — the only place iCloud Drive is mentioned is the retry notice shown when saving a backup fails. So this advice comes from this manual and is not a quotation of any screen in the app.</p>
+<nav class="chapter-pager"><span class="prev"><a href="13-app-lock-privacy.html">← 13. App Lock, Local Storage, and Privacy</a></span><span class="next"><a href="15-troubleshooting-support.html">15. Troubleshooting and Support →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. Categories and Tags · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>5. Categories and Tags</h1>
+<h2>Managing categories</h2>
+<p>Categories are managed from the <strong>Category</strong> row in the <strong>Manage</strong> menu (on iPhone, the drawer you open with the top menu button; on iPad and Mac, the "Categories &amp; automation" section of Settings). The screen is titled <strong>Manage Categories</strong>.</p>
+<ul><li>Categories have two levels: top-level groups (the broad branches of expense and income) and subcategories beneath them.</li><li>When you create one you enter <strong>only a name</strong> — there is no icon or color picker at that point. To change the icon you reopen the category and go into the <strong>edit</strong> screen, where a <strong>Choose an icon</strong> grid appears and you can pick any SF Symbol. Colors cannot be chosen; they are always assigned automatically. A top-level group with no subcategories cannot be used on a transaction directly.</li><li>Tap <strong>Edit order</strong> in the top bar to drag the top-level groups into a different order, and to reorder the subcategories within each group.</li></ul>
+<figure><img src="../assets/en-12-categories-reorder-mode.png" alt="The Manage Categories screen and edit order mode" loading="lazy"><figcaption>The Manage Categories screen and edit order mode</figcaption></figure>
+<figure><img src="../assets/en-13-categories-icon-picker.png" alt="The Choose an icon grid on the category edit screen" loading="lazy"><figcaption>The "Choose an icon" grid on the category edit screen</figcaption></figure>
+<p>When you stop using a category, <strong>archiving</strong> it rather than deleting is the norm. A category already used by past transactions is not deleted outright, so that those records stay intact (see chapter 14 for the exceptions).</p>
+<h2>Managing budget groups and tags</h2>
+<p>The <strong>Budget groups &amp; tags</strong> row in the same <strong>Manage</strong> menu handles both.</p>
+<ul><li>A budget group bundles several categories under one spending limit (see chapters 2 and 6). This screen is where you create a group and decide which categories belong to it.</li><li>A tag is a label you attach freely to individual transactions, independently of categories (for example <code>#travel</code>, <code>#awaiting-refund</code>). One tag can gather transactions that cut across several categories and accounts.</li><li>This screen also has the <strong>Edit order</strong> ↔ <strong>Complete</strong> buttons for changing the display order of groups and tags.</li></ul>
+<figure><img src="../assets/en-14-categories-budget-tag-management.png" alt="The Budget groups &amp; tags management screen" loading="lazy"><figcaption>The Budget groups &amp; tags management screen</figcaption></figure>
+<h2>Categories and budget groups are independent</h2>
+<p>Creating a category and connecting that category to a budget group are <strong>two different decisions</strong>. If you create a category but do not connect it to a budget group, spending in it does not count against any particular group — it reduces the overall Available to allocate (pool). Chapter 6 works through the arithmetic.</p>
+<nav class="chapter-pager"><span class="prev"><a href="04-transactions.html">← 4. Entering Transactions — Expense, Income, Transfer, Card Payment, Refund, Split</a></span><span class="next"><a href="06-budget-walkthrough.html">6. Budgets — A Worked Example →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8. Pasting Messages and Setting Up Message Recognition Rules — A Worked Example · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>8. Pasting Messages and Setting Up Message Recognition Rules — A Worked Example</h1>
+<p>Paste an approval or transaction message from your card issuer or bank and the app can fill in the amount, merchant, and date without typing them by hand. This chapter covers how to check which formats are already supported, and how to build your own <strong>message recognition rule</strong> for a format that is not.</p>
+<h2>Start with the privacy boundary</h2>
+<p>Tameio <strong>does not read your messages inbox.</strong> It only processes text that you copy from your notifications or messaging app and paste into the entry screen yourself, and that text is never sent off the device. The sample message you enter when creating a rule is stored locally as reference material for that rule; it is not sent to a server either.</p>
+<h2>Step 1 — Paste supported formats directly</h2>
+<p>Paste a card approval or account transaction message into the entry screen, and if it matches a registered rule the amount, merchant, date, and so on are filled in automatically. <strong>Nothing is saved automatically</strong> — check the filled-in values and tap save to record the transaction.</p>
+<h2>Step 2 — Create a new rule for formats that are not recognized</h2>
+<p>Messages from a new card issuer, or in unfamiliar wording, may not be filled in automatically. When that happens, open <strong>Message Recognition Rules</strong> from the <strong>Manage</strong> screen in the top menu, then choose <strong>Add Message Recognition Rule</strong> from the menu in the top right.</p>
+<p>Example message (sensitive details removed; not real data):</p>
+<pre><code>[Web]
+Example Card (1234) approved
+$120.00 single payment
+09/07 12:34
+Merchant: Example Cafe</code></pre>
+<ol><li>Enter the message above as the sample on the add-rule screen.</li><li>Following the guidance, mark the parts that correspond to the <strong>amount</strong> ($120.00), the <strong>date</strong> (09/07), and the <strong>merchant</strong> (Example Cafe).</li><li>Set which transaction type this message is (expense, card payment, and so on), plus the default category and payment method (Example Card).</li></ol>
+<h2>Advanced settings — when the automatic analysis picks the wrong place</h2>
+<p>At the bottom of the <strong>Automatic analysis</strong> step there is a collapsed <strong>Advanced settings</strong> section. You do not have to open it to create a rule — as the screen itself says, it is for when you want to "Use this only to fine-tune values suggested by the guided flow."</p>
+<h3>Which messages the rule applies to — recognition conditions</h3>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>What it means</th></tr></thead><tbody><tr><td><strong>Required words · One per line</strong></td><td><strong>Every</strong> word you list here must appear in the message for the rule to match</td></tr><tr><td><strong>Excluded words · One per line</strong></td><td>If even one of them appears, the rule is not applied</td></tr><tr><td><strong>Word order · Example: deposit &gt; transaction amount</strong></td><td>Each line is one group, and the words separated by <code>&gt;</code> must appear in that order</td></tr></tbody></table></div>
+<p>All three fields take <strong>one entry per line</strong>. Things to know:</p>
+<ul><li><strong>These are not regular expressions.</strong> The app only checks whether the text you typed appears in the message as-is.</li><li><strong>Case and accents matter.</strong> <code>CARD</code> and <code>card</code> count as different words.</li><li><strong>At least one of Required words or Word order must be filled in.</strong> Leave both empty and saving is blocked with "A criterion is needed to distinguish this message."</li><li>Word order allows at most 4 lines, with 2–8 words per line. Across all three fields you cannot exceed 16 distinct words.</li></ul>
+<h3>Where to take the values from — exact extraction ranges</h3>
+<p>Use this when the automatic analysis picked the wrong amount or merchant. Drag to select the part you want in the sample message, choose the <strong>Field</strong>, then tap <strong>Use selected source range as a field</strong>. The seven fields you can choose from are <strong>Amount · Currency · Merchant or contact · Transaction Date · Financial institution hint · Account suffix hint · Installment Months</strong>.</p>
+<ul><li>If dragging is awkward, type the value exactly as it appears into <strong>Exact value in the sample</strong> and tap <strong>Add Directly Entered Value</strong> instead.</li><li>If the same value appears several times in the message, use <strong>Occurrence</strong> (1–8) to say which one you mean.</li><li>Choosing <strong>Amount</strong> also shows <strong>Decimal separator</strong> (default none) and <strong>Grouping separator</strong> (default comma). For messages like <code>$120.00</code> set the decimal separator to a period.</li><li>For <strong>Currency</strong>, turning on <strong>Fixed currency code</strong> stops the app looking for a currency in the message and always records the code you set in <strong>Fixed currency</strong>. Use this for messages that carry no currency marker.</li><li>The fields you assign stack up below as entries like <code>Amount · #1</code>, and each row has a remove button.</li></ul>
+<h3>Priority and test reference date</h3>
+<ul><li><strong>Priority</strong> (0–10,000) can only be adjusted <strong>when you are creating a rule</strong>. On an already saved rule the value is locked, and you change it with <strong>Edit order</strong> in the list instead (see "When several rules match at once" below).</li><li><strong>Test reference date</strong> is not saved with the rule. It exists so you can test <strong>which date gets recorded when the message contains no date</strong>.</li></ul>
+<h3>When editing or duplicating a saved rule</h3>
+<p>Open a rule by editing or duplicating it and a notice appears at the top — <strong>"The saved recognition and extraction pattern is preserved."</strong> — with the recognition condition fields locked. In that state the <strong>pattern saved earlier</strong> is what is used, not the sample you have entered now. To really change the conditions you must first tap <strong>Rebuild recognition pattern from current sample</strong> to unlock them.</p>
+<h2>Step 3 — Check the extraction result in the preview</h2>
+<p>Before saving the rule, use the <strong>Preview of what will be recorded</strong> card to check that the extracted amount, date, and merchant, and the category and payment method references you set, are correct. If you like, turn on the <strong>Keep original sample message</strong> switch to keep this sample message with the rule for later reference. Nothing is saved automatically here either — the rule is registered only when you save it yourself.</p>
+<h2>The last step — the rule name is the key</h2>
+<p>The rule name you set in the final <strong>Name and save</strong> step is not just the label shown in the list; <strong>the name itself is the key that identifies the rule</strong>. You cannot use the same name twice.</p>
+<ul><li><strong>Saving with a name that already exists is rejected.</strong> Nothing is overwritten and nothing is merged.</li><li><strong>The comparison is lenient.</strong> Leading and trailing spaces are stripped, and case and accents are ignored. So <code>Card approval</code> and <code>card approval </code> (with a trailing space), or <code>Cafe</code> and <code>Café</code>, count as <strong>the same name</strong>.</li><li><strong>An archived rule still holds on to its name.</strong> Archiving a rule does not release the name, so to reuse it you have to rename the archived rule first.</li><li><strong>Duplicating</strong> a rule pre-fills the name so that it does not collide when you save it as is.</li><li>Names can be up to 120 characters.</li></ul>
+<p>⚠️ <strong>The screen will not tell you that the name is the problem.</strong> After you tap save, all you get is the <strong>generic message</strong> "The rule couldn't be saved. Check the latest list and try again." The same wording appears for other causes too, so when you see it, <strong>check the list — including the "Archived" section — for the same name</strong> first.</p>
+<p>Renaming a rule later keeps its identity, priority, and links intact. This name is also shown on the entry screen when a message is recognized, in the form <code>Rule: &lt;name&gt; · &lt;institution&gt; · User rule</code>, so it is worth choosing a name that will tell you later which rule matched.</p>
+<h2>Step 4 — Re-verify with a new message in the same format</h2>
+<p>After saving the rule, paste a new message from the same card issuer with a different amount and check that the rule applies correctly. Look at whether the rule recognizes amounts and dates consistently even when they arrive in slightly different shapes.</p>
+<p>If something is recognized incorrectly, reopen the rule and correct the field assignments. If you want to replace it with a more accurate rule, move the old one to <strong>Archive</strong> in the list — archived rules move to the "Archived" section and are no longer applied to new messages, but they are not erased. Note, though, that <strong>archiving still keeps its name reserved</strong>, so you cannot give a new rule the same name (see "The rule name is the key" above).</p>
+<h2>Privacy notes</h2>
+<ul><li>Never put sensitive values — full account or card numbers, real names, phone numbers — into a rule's sample, into a support request, or into any screenshot you share. Keep at most the last few digits of a card and the merchant name, and mask the rest.</li><li>When you write to support, include only the minimum needed to reproduce the problem: <strong>the shape of the message</strong> (where the line breaks are, which word sits where) and which value was recognized incorrectly, rather than real amounts and merchants.</li></ul>
+<h2>When several rules match at once</h2>
+<p>Tap <strong>Edit order</strong> on the rule list screen and you can drag rules or move them with the arrows; that order is the priority. When several rules match the same message, they are applied in this order.</p>
+<ol><li>Your own rules are always applied before the app's built-in rules.</li><li>Among your own rules, the one higher up in <strong>Edit order</strong> is applied first.</li></ol>
+<nav class="chapter-pager"><span class="prev"><a href="07-recurring-walkthrough.html">← 7. Recurring Rules and Scheduled Transactions — A Worked Example</a></span><span class="next"><a href="09-receipts-ocr.html">9. Receipts — Capture, OCR, and Attachments →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

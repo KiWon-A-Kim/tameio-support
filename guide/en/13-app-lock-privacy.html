@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13. App Lock, Local Storage, and Privacy · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>13. App Lock, Local Storage, and Privacy</h1>
+<h2>Setting up App Lock</h2>
+<p>Turn on <strong>Use App Lock</strong> on the <strong>App Lock</strong> screen in Settings and the app asks you to authenticate every time you open it.</p>
+<ul><li>On devices with biometrics (Face ID / Touch ID), the <strong>Biometrics</strong> switch lets you use your fingerprint or face as well — the screen explains it as "Use biometrics for App Lock."</li><li>The first time you set it up you create a numeric PIN or a text password on the <strong>Set PIN</strong> or <strong>Set Password</strong> screen. You can change it later with <strong>Change PIN</strong> or <strong>Change Password</strong>.</li><li>If you enter the PIN or password incorrectly, an error notice appears and you can try again.</li></ul>
+<figure><img src="../assets/en-42-app-lock-settings.png" alt="The App Lock screen — the use switch and the authentication method" loading="lazy"><figcaption>"App Lock" screen — the use switch and the authentication method</figcaption></figure>
+<h2>Your data stays on this device</h2>
+<p>Tameio keeps all ledger data in <strong>local storage on the device only</strong>. It does not sync to a server in real time, and it does not track you for usage analytics or advertising. There are exactly two cases where the app talks to the outside world.</p>
+<ol><li><strong>Exchange rate lookups</strong> — to fetch rate information when you enter a foreign currency transaction.</li><li><strong>Device transfer</strong> — only when you run it yourself, to send a backup to another of your own devices over an encrypted channel.</li></ol>
+<p>Receipt OCR also runs <strong>on the device</strong>, not on a server (see chapter 9). Unless you delete the app or reset it, your data exists only on the device and in backup files you have made yourself.</p>
+<h2>Privacy policy</h2>
+<p>For more detail, see <strong>Privacy Policy</strong> in Settings (an external link). Wherever you open this link in the app, it always leads to the same public document.</p>
+<p>App Lock setup and the authentication methods are no different on iPad and Mac than on iPhone — you use a PIN or password, plus whichever biometric the device supports (Face ID, Touch ID, or Optic ID). There is no platform-specific restriction such as "this device supports passwords only".</p>
+<nav class="chapter-pager"><span class="prev"><a href="12-backup-restore.html">← 12. Backup, Restore, Starting a New Ledger, and Device Transfer</a></span><span class="next"><a href="14-dangerous-operations.html">14. Destructive Operations — What to Do Before Deleting the App, Resetting Data, or Permanently Deleting Accounts and Transactions →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

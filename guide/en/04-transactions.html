@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4. Entering Transactions — Expense, Income, Transfer, Card Payment, Refund, Split · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>4. Entering Transactions — Expense, Income, Transfer, Card Payment, Refund, Split</h1>
+<p>The entry screen is the one you will use most. Across the top are four segments: <strong>Expense · Income · Transfer · Refund</strong>. This chapter shows how each type affects account balances and budgets differently.</p>
+<h2>The three basic types</h2>
+<ul><li><strong>Expense</strong>: money goes out. If you assign a category, the spent amount of the budget group that category belongs to goes up.</li><li><strong>Income</strong>: money comes in. <strong>Available to allocate (pool)</strong> goes up.</li><li><strong>Transfer</strong>: money only changes position <strong>between</strong> your own accounts, cash, and card debt. It is neither an expense nor income, so it does not appear in budgets or statistics.</li></ul>
+<figure><img src="../assets/en-07-transactions-kind-segment.png" alt="The Expense/Income/Transfer/Refund segments at the top of the entry screen" loading="lazy"><figcaption>The Expense/Income/Transfer/Refund segments at the top of the entry screen</figcaption></figure>
+<h2>Card payments — choosing a card as the Transfer Target switches automatically</h2>
+<p>Paying a credit card bill from a bank account is not an expense; it is handled as <strong>a kind of transfer (a card payment)</strong>. The spending was already reflected in budgets and statistics at the moment you used the card, so paying the bill is only "moving money from an account to the card to settle the debt". This distinction is what keeps the same spending from being counted twice.</p>
+<p>In the <strong>Transfer</strong> segment, choose a credit card account as the <strong>Transfer Target</strong> and the screen switches to card payment mode by itself, showing the notice <strong>"Not reflected in expenses/budget"</strong>. There is no separate "card payment" tab to find first — just set the transfer target to a credit card.</p>
+<figure><img src="../assets/en-08-transactions-card-payment-banner.png" alt="The card payment notice banner after choosing a credit card as the transfer target" loading="lazy"><figcaption>The card payment notice banner after choosing a credit card as the transfer target</figcaption></figure>
+<h2>Refunds — why they differ from transfers and income</h2>
+<p>When money comes back from a card issuer or a merchant it looks like a deposit into your account, but the three types mean different things.</p>
+<div class="table-wrap"><table><thead><tr><th>Entry type</th><th>Meaning</th><th>Effect on expenses and budgets</th></tr></thead><tbody><tr><td>Transfer</td><td>Position only, among your accounts, cash, and card debt</td><td>Does not reduce any cost</td></tr><tr><td>Income</td><td>Newly earned money</td><td>Increases funds available to allocate, but cancels no specific expense</td></tr><tr><td>Refund</td><td>Reverses all or part of a previously recorded cost</td><td>Reduces that cost and the spent amount of its budget group</td></tr></tbody></table></div>
+<p>Record a refund as a transfer and the account balance looks right while the original expense and the budget usage stay behind. Record it as income and the expense stays put while income rises, which changes what the statistics mean. That is why refund is its own type.</p>
+<h3>Two ways to start a refund</h3>
+<ol><li><strong>Start from the original expense (recommended):</strong> open the detail of the saved expense and choose <strong>Record refund</strong> in the <strong>Related actions</strong> card. Linking the original transaction fills in the category to reverse, the budget group, the account the money is coming back to, and the <strong>remaining refundable amount</strong> automatically.</li><li><strong>Start directly on the entry screen:</strong> choose <strong>Refund</strong> in the top segments and fill in the values yourself. You can still link the original transaction here.</li></ol>
+<p>Partial refunds are supported. The refunds linked to one original transaction cannot add up to more than the original expense. Saving does not modify the original: it creates <strong>one new transaction</strong> and leaves the original as it was. A refund lands in the budget and statistics of <strong>the date the refund happened</strong>, not the month of the original transaction. So a period containing only refunds can show negative spending or negative budget usage for that category.</p>
+<p>Linking the original transaction is optional, but recommended for the automatic fill-in and the protection against over-refunding. Receipts, attachments, and tags on the original are <strong>not</strong> copied to the refund. If you need proof of the refund, attach it to the refund transaction separately.</p>
+<h2>Split entry — dividing one payment across categories</h2>
+<p>When a single payment mixes several kinds of spending (groceries and household goods in one supermarket trip, say), use <strong>Split entry</strong>. This is not a separate screen: turn on the "Split entry" switch above the category field on the <strong>Expense</strong> entry screen and the same screen turns into a split-line editor. Each split line can have its own category and amount, and the <strong>Split total</strong> must exactly equal the full payment amount.</p>
+<h2>What editing and deleting mean</h2>
+<ul><li>When you edit a transaction and save, the app does not keep a separate "before" record in your history; it replaces the same transaction with the new content in one step.</li><li>Deleting a transaction goes through a confirmation dialog ("Delete this transaction?") and cannot be undone. The transaction disappears completely and balances and statistics are recalculated immediately. Chapter 14 covers the full warning wording and the two options for deleting an account.</li></ul>
+<nav class="chapter-pager"><span class="prev"><a href="03-accounts.html">← 3. Creating Accounts and Starting Balances</a></span><span class="next"><a href="05-categories-tags.html">5. Categories and Tags →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

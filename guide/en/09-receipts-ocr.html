@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9. Receipts — Capture, OCR, and Attachments · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>9. Receipts — Capture, OCR, and Attachments</h1>
+<h2>Attaching a receipt</h2>
+<p>Tap <strong>Add receipt</strong> on the entry screen and choose one of three ways.</p>
+<ul><li><strong>Scan with camera</strong> — photograph the receipt on the spot.</li><li><strong>Photo library</strong> — pick a photo you have already taken.</li><li><strong>Choose file</strong> — pick a scanned file, a PDF, and so on.</li></ul>
+<p>An attached receipt appears as a thumbnail in the <strong>Receipt</strong> card, and you can reopen it from either the entry screen or the transaction detail.</p>
+<h2>On-device OCR fills the form for you</h2>
+<p>When you attach a photo of a receipt, the total, date, and merchant are read <strong>on the device</strong> — nothing is sent to a server — and filled into the entry form. Values the app is unsure about get a highlighted field border in one accent color, values it read confidently get another, and each is labelled with a <strong>Needs attention</strong> or <strong>Auto-filled</strong> capsule. (The distinction is made with border color and a short label, not icons.) If recognition fails, the attached receipt still stays where it is and you can carry on filling in the rest by hand.</p>
+<h2>Item details — individual items on the receipt</h2>
+<p>If you want to keep the individual products on a receipt (item, quantity, unit price), use the <strong>Item details</strong> screen to review, correct, or add them yourself. For a shopping trip that spans several categories you can split the items by classification and connect them to the split entry from chapter 4.</p>
+<figure><img src="../assets/en-32-receipts-item-detail.png" alt="The Item details screen" loading="lazy"><figcaption>The "Item details" screen</figcaption></figure>
+<p><strong>Important:</strong> items are <strong>reference information</strong>, not the basis of any accounting calculation. Balances, budgets, and statistics are always calculated from the transaction amount; the sum of the item list never replaces it.</p>
+<h2>Privacy note</h2>
+<p>A photo of a receipt can also capture the store location, the last digits of the card used, and sometimes a real name. Do not attach the original receipt image to a support request or to any screenshot you share publicly.</p>
+<nav class="chapter-pager"><span class="prev"><a href="08-parsing-rule-walkthrough.html">← 8. Pasting Messages and Setting Up Message Recognition Rules — A Worked Example</a></span><span class="next"><a href="10-stats-reports.html">10. Reading and Exporting Statistics and Reports →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>

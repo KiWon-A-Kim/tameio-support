@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Creating Accounts and Starting Balances · 타미오 사용자 매뉴얼</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    color: #1b1b21; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ececf1; background: #16161a; } }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; margin-bottom: .3rem; }
+  p { margin: .9rem 0; }
+  a { color: #4f46d8; }
+  @media (prefers-color-scheme: dark) { a { color: #a5a8ff; } }
+  code { background: rgba(127,127,140,.14); border-radius: .3rem; padding: .05rem .35rem; font-size: .92em; }
+  pre { background: rgba(127,127,140,.12); border-radius: .6rem; padding: .9rem 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  blockquote {
+    margin: 1rem 0; padding: .1rem 1.1rem; border-left: 3px solid rgba(127,127,140,.5);
+    color: #55555f;
+  }
+  @media (prefers-color-scheme: dark) { blockquote { color: #b7b7c2; } }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid rgba(127,127,140,.3); padding: .45rem .6rem; text-align: left; }
+  th { background: rgba(127,127,140,.12); }
+  figure { margin: 1.25rem 0; }
+  figure img {
+    max-width: 100%; border-radius: .9rem; border: 1px solid rgba(127,127,140,.25); display: block;
+  }
+  figcaption { margin-top: .5rem; font-size: .88rem; color: #6b6b76; }
+  @media (prefers-color-scheme: dark) { figcaption { color: #9a9aa5; } }
+  nav.crumbs { font-size: .9rem; color: #6b6b76; margin-bottom: .5rem; }
+  nav.chapter-pager {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 3rem;
+    padding-top: 1.25rem; border-top: 1px solid rgba(127,127,140,.3); font-size: .95rem;
+  }
+  nav.chapter-pager .prev { text-align: left; }
+  nav.chapter-pager .next { text-align: right; }
+  ol.toc { padding-left: 1.4rem; }
+  ol.toc li { margin: .35rem 0; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6b6b76; }
+</style>
+</head>
+<body>
+<nav class="crumbs"><a href="index.html">사용 가이드</a></nav>
+<h1>3. Creating Accounts and Starting Balances</h1>
+<p>An account is the place money actually sits, or where debt accrues (see chapter 2). This chapter covers creating a <strong>new account</strong> and getting its <strong>starting balance</strong> right.</p>
+<h2>The five account types</h2>
+<p>When you add a new account you choose one of these five types.</p>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Examples</th><th>What the balance means</th></tr></thead><tbody><tr><td>Bank</td><td>Checking account, salary account</td><td>Cash you actually hold</td></tr><tr><td>Savings</td><td>Term deposit, savings plan</td><td>Savings tied up until maturity</td></tr><tr><td>Investment</td><td>Brokerage account</td><td>Assets measured by actual deposits and withdrawals, not market value</td></tr><tr><td>Cash</td><td>Wallet, emergency cash</td><td>Cash you actually hold</td></tr><tr><td>Credit Card</td><td>Credit card</td><td><strong>Debt</strong> that builds up as you spend — not an asset</td></tr></tbody></table></div>
+<p>A credit card behaves differently from the other four. The more you use the card, the more "the amount owed on this card" <strong>grows</strong>, and paying the bill on the due date reduces that debt.</p>
+<p>The screen is titled <strong>New Asset</strong>, and every type shares an <strong>Asset name</strong> field.</p>
+<h2>Setting the starting balance</h2>
+<p>If you enter the real current balance of the account or card when you create it, the app automatically creates one transaction that produces that balance. The name of the input field depends on the type.</p>
+<ul><li>Bank, savings, investment, cash: <strong>Ledger starting balance</strong>. The screen also explains that "A separate opening balance record will be created. It is not income or expense."</li><li>Credit card: <strong>Current Usage</strong> — enter the card debt you have not yet repaid.</li></ul>
+<p>This value is not stored as a number; it creates a transaction that establishes your starting point. As real transactions accumulate, the <strong>Current Balance</strong> shown on screen is always recalculated from them.</p>
+<h2>When the balance later disagrees with reality</h2>
+<p>If your bank app and Tameio drift apart (a missed transaction, rounding, and so on), you do not need to open a separate screen. <strong>Tap the "Current Balance" figure at the top of the account detail screen</strong> and type the real value. Then tap <strong>Match this balance</strong>, and a single <strong>adjusting transaction for the difference</strong> is created so the balance matches reality. If the difference is zero, no transaction is created.</p>
+<h2>Tidying up accounts</h2>
+<p>Ordinary bank, card, cash, and investment accounts have no "close" or "archive" menu — the manage menu (⋯) on the account detail screen offers only rename and delete. It is perfectly fine to leave an account you no longer use sitting in the list. If you really want it gone, use the deletion described in chapter 14 (which behaves differently depending on whether the account has transactions). <strong>Savings accounts are the one exception</strong>: the account detail screen offers a separate flow to record the principal and interest on maturity or early termination and then <strong>Close</strong> the account.</p>
+<nav class="chapter-pager"><span class="prev"><a href="02-three-axes.html">← 2. Three Axes to Know First — Accounts, Categories, Budgets</a></span><span class="next"><a href="04-transactions.html">4. Entering Transactions — Expense, Income, Transfer, Card Payment, Refund, Split →</a></span></nav>
+<footer>
+  <p><a href="index.html">사용 가이드 목차</a> · <a href="../index.html">언어 선택</a> ·
+  <a href="../../support.html">지원</a> · <a href="../../privacy.html">개인정보 처리방침</a></p>
+</footer>
+</body>
+</html>
